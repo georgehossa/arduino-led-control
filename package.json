@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Control Leds from web",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
   "keywords": [
     "arduino"
   ],
@@ -13,5 +16,8 @@
     "express": "^4.17.1",
     "johnny-five": "^1.4.0",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "sass": "^1.24.5"
   }
 }
