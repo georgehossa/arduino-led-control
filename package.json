@@ -4,8 +4,7 @@
   "description": "Control Leds from web",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "arduino"
@@ -18,6 +17,7 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "nodemon": "^2.0.2",
     "sass": "^1.24.5"
   }
 }
