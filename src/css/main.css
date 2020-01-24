@@ -1,0 +1,136 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap");
+
+:root {
+  --font__default: "Nunito", sans-serif;
+  --font-size__default: 16px;
+  --color__default: #222222;
+  --color__led-green: #a3f400;
+  --color__led-blue: #16d8ff;
+  --color__led-yellow: #ffd800;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size__default);
+  font-family: var(--font__default);
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.led-controls {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+.led-controls__title {
+  color: $color__default;
+}
+.led-controls__intro {
+  color: $color__default;
+  margin: 1rem auto;
+}
+.led-controls__list {
+  display: flex;
+  justify-content: space-evenly;
+}
+.led-controls__control {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+}
+.led-controls__control h2 {
+  margin: 0 0.5rem;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider.blue {
+  background-color: var(--color__led-blue);
+}
+
+input:focus + .slider.blue {
+  box-shadow: 0 0 1px var(--color__led-blue);
+}
+
+input:checked + .slider.green {
+  background-color: var(--color__led-green);
+}
+input:focus + .slider.green {
+  box-shadow: 0 0 1px var(--color__led-green);
+}
+input:checked + .slider.yellow {
+  background-color: var(--color__led-yellow);
+}
+
+input:focus + .slider.yellow {
+  box-shadow: 0 0 1px var(--color__led-yellow);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
